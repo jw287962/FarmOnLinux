@@ -1,56 +1,34 @@
-2024-02-06T18:57:30.911030Z  INFO subspace_farmer::commands::farm: Connecting to node RPC url=ws://127.0.0.1:9944
-2024-02-06T18:57:30.914318Z  INFO subspace_networking::constructor: DSN instance configured. allow_non_global_addresses_in_dht=false peer_id=12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6 protocol_version=/subspace/2/0c121c75f4ef450f40619e1fca9d1e8e7fbabc42c895bc4790801e85d5a91c34
-2024-02-06T18:57:30.914821Z  INFO libp2p_swarm: local_peer_id=12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:47.358970Z  INFO subspace_farmer::commands::farm: Connecting to node RPC url=ws://127.0.0.1:9944
+2024-02-06T22:33:47.362031Z  INFO subspace_networking::constructor: DSN instance configured. allow_non_global_addresses_in_dht=false peer_id=12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6 protocol_version=/subspace/2/0c121c75f4ef450f40619e1fca9d1e8e7fbabc42c895bc4790801e85d5a91c34
+2024-02-06T22:33:47.362647Z  INFO libp2p_swarm: local_peer_id=12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
 Single disk farm 0:
   ID: 01HNK443JWGNNSHNHWYT2ANDVR
   Genesis hash: 0x0c121c75f4ef450f40619e1fca9d1e8e7fbabc42c895bc4790801e85d5a91c34
   Public key: 0x3c7c2db62a54b7a7dc582e9a4f54ef5d9845cd233b810a3ae18fc92529329f47
   Allocated space: 3.6 TiB (3.9 TB)
   Directory: /mnt/ed1bccd4-5d61-43ea-aef6-4d05bd49fdf9
-2024-02-06T18:57:31.775985Z  INFO subspace_farmer::commands::farm: Collecting already plotted pieces (this will take some time)...
-2024-02-06T18:57:31.776015Z  INFO subspace_farmer::piece_cache: Initializing piece cache
-2024-02-06T18:57:32.012539Z  INFO subspace_farmer::commands::farm: Finished collecting already plotted pieces successfully
-2024-02-06T18:57:32.012691Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::farming: Subscribing to slot info notifications
-2024-02-06T18:57:32.012714Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::reward_signing: Subscribing to reward signing notifications
-2024-02-06T18:57:32.012824Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/127.0.0.1/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.012916Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/::1/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.012927Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/192.168.1.91/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.012996Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:43dc:b79d:9fa3:6b18/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013019Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0::40/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013026Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:fb6d:d2bf:93d2:c8e/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013032Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:6d73:4ce0:a5c9:2f64/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013041Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/fe80::3960:b709:bb61:c18/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013093Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/127.0.0.1/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013121Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/::1/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013133Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/192.168.1.91/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013144Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:43dc:b79d:9fa3:6b18/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013157Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0::40/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013166Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:fb6d:d2bf:93d2:c8e/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013186Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:6d73:4ce0:a5c9:2f64/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.013196Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/fe80::3960:b709:bb61:c18/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
-2024-02-06T18:57:32.024469Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Subscribing to archived segments
-2024-02-06T18:58:52.923654Z  INFO subspace_farmer::piece_cache: Synchronizing piece cache
-2024-02-06T18:58:52.948726Z  INFO subspace_farmer::piece_cache: Finished piece cache synchronization
-2024-02-06T18:58:52.959086Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.35% complete) sector_index=1448
-2024-02-06T19:04:00.269672Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.38% complete) sector_index=1449
-2024-02-06T19:08:03.036277Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.40% complete) sector_index=1450
-2024-02-06T19:12:12.723216Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.43% complete) sector_index=1451
-2024-02-06T19:16:21.002028Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.46% complete) sector_index=1452
-2024-02-06T19:20:31.640755Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.48% complete) sector_index=1453
-2024-02-06T19:24:35.433250Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.51% complete) sector_index=1454
-2024-02-06T19:28:42.721720Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.54% complete) sector_index=1455
-2024-02-06T19:32:47.509478Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.57% complete) sector_index=1456
-2024-02-06T19:36:51.706124Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.59% complete) sector_index=1457
-2024-02-06T19:41:04.036160Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.62% complete) sector_index=1458
-2024-02-06T19:45:13.934165Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.65% complete) sector_index=1459
-2024-02-06T19:49:22.436035Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.67% complete) sector_index=1460
-2024-02-06T19:53:31.682975Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.70% complete) sector_index=1461
-2024-02-06T19:57:46.056928Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.73% complete) sector_index=1462
-2024-02-06T20:01:56.073791Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.76% complete) sector_index=1463
-2024-02-06T20:06:04.499954Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.78% complete) sector_index=1464
-2024-02-06T20:10:11.886914Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.81% complete) sector_index=1465
-2024-02-06T20:14:20.886764Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.84% complete) sector_index=1466
-2024-02-06T20:18:25.635648Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.86% complete) sector_index=1467
-2024-02-06T20:22:33.573449Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.89% complete) sector_index=1468
-2024-02-06T20:26:42.803607Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.92% complete) sector_index=1469
-2024-02-06T20:30:51.245373Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (39.95% complete) sector_index=1470
+2024-02-06T22:33:47.913079Z  INFO subspace_farmer::commands::farm: Collecting already plotted pieces (this will take some time)...
+2024-02-06T22:33:47.913211Z  INFO subspace_farmer::piece_cache: Initializing piece cache
+2024-02-06T22:33:48.155121Z  INFO subspace_farmer::commands::farm: Finished collecting already plotted pieces successfully
+2024-02-06T22:33:48.155283Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::farming: Subscribing to slot info notifications
+2024-02-06T22:33:48.155308Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::reward_signing: Subscribing to reward signing notifications
+2024-02-06T22:33:48.155636Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Subscribing to archived segments
+2024-02-06T22:33:48.155649Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/127.0.0.1/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155788Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/::1/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155802Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/192.168.1.91/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155811Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:43dc:b79d:9fa3:6b18/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155821Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0::40/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155827Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:fb6d:d2bf:93d2:c8e/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155834Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:6d73:4ce0:a5c9:2f64/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155846Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/fe80::3960:b709:bb61:c18/udp/30533/quic-v1/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155904Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/127.0.0.1/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155939Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/::1/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155949Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip4/192.168.1.91/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155956Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:43dc:b79d:9fa3:6b18/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155964Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0::40/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155969Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:fb6d:d2bf:93d2:c8e/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155984Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/2600:1700:9250:56e0:6d73:4ce0:a5c9:2f64/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:33:48.155990Z  INFO subspace_farmer::commands::farm::dsn: DSN listening on /ip6/fe80::3960:b709:bb61:c18/tcp/30533/p2p/12D3KooWGxv3eHg685ZAw2YrRjrgyqV25DHw176CzDnA8DcnaDs6
+2024-02-06T22:34:55.842789Z  INFO subspace_farmer::piece_cache: Synchronizing piece cache
+2024-02-06T22:34:55.868687Z  INFO subspace_farmer::piece_cache: Finished piece cache synchronization
+2024-02-06T22:34:55.878801Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.71% complete) sector_index=1498

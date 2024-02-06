@@ -15,7 +15,7 @@ curl -X POST "$URL" -d "chat_id=$CHAT_ID" -d "text=/setIP $IP_ADDRESS $HOST" -d 
 
 #do NVIDIASMI 
 # echo 'starting NVIDIASMI'
-echo $(../gpusmi.sh)
+#echo $(../gpusmi.sh)
 
 echo 'starting NODE'
 #starting node
