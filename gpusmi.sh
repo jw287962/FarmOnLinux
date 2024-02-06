@@ -1,6 +1,6 @@
 #!/bin/sh
 
 
-nvidia-smi -lmc 810;
+/usr/bin/nvidia-smi -lmc 810;
 
-nvidia-smi -lgc 1470;
+/usr/bin/nvidia-smi -lgc 1470;

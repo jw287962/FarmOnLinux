@@ -32,3 +32,14 @@ Single disk farm 0:
 2024-02-06T22:34:55.842789Z  INFO subspace_farmer::piece_cache: Synchronizing piece cache
 2024-02-06T22:34:55.868687Z  INFO subspace_farmer::piece_cache: Finished piece cache synchronization
 2024-02-06T22:34:55.878801Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.71% complete) sector_index=1498
+2024-02-06T22:40:25.360452Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.73% complete) sector_index=1499
+2024-02-06T22:44:38.130885Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.76% complete) sector_index=1500
+2024-02-06T22:48:49.429571Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.79% complete) sector_index=1501
+2024-02-06T22:53:02.090472Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.82% complete) sector_index=1502
+2024-02-06T22:57:14.772812Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.84% complete) sector_index=1503
+2024-02-06T23:01:24.636914Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.87% complete) sector_index=1504
+2024-02-06T23:05:38.163909Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.90% complete) sector_index=1505
+2024-02-06T23:09:49.064555Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.92% complete) sector_index=1506
+2024-02-06T23:13:59.769491Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.95% complete) sector_index=1507
+2024-02-06T23:18:12.178548Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (40.98% complete) sector_index=1508
+2024-02-06T23:22:21.895179Z  INFO single_disk_farm{disk_farm_index=0}: subspace_farmer::single_disk_farm::plotting: Plotting sector (41.01% complete) sector_index=1509
