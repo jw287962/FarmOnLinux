@@ -38,6 +38,9 @@ crontab -e
 
 crontab -l 
 
-
+# SSH
+Read log files with 
+tail -n `# of lines`
+IE: tail -n 5
 
 
