@@ -4,6 +4,7 @@ for farming and mining on my linux with telegram notification
 
 Download updated release from subspace and follow updated CLI commands
 https://github.com/subspace/subspace/releases 
+wget 'LINK' to download in CLI
 
 ADD CHMOD +X to SH SCRIPTS
 
