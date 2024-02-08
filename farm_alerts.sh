@@ -1,5 +1,5 @@
 #!/bin/bash
-source functions.sh
+source /home/jason/Documents/FarmOnLinux/functions.sh
 
 URL=$(get_telegram)
 IP_ADDRESS=$(get_ipaddress)
@@ -8,7 +8,7 @@ CHAT_ID=6919531958
 
 while true; do
     # LOG TELEGRAM ALERT
-    LOG_FILE="./startup/script.log"
+    LOG_FILE="/script.log"
 
 
     LIMITLINES=4

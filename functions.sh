@@ -1,7 +1,7 @@
 
 
 # functions.sh
-CONFIG_FILE="/home/jasonminer/Documents/FarmOnLinux/config.yaml"
+CONFIG_FILE="/home/jason/Documents/FarmOnLinux/config.yaml"
 # Function to extract TELEGRAM URL from config file
 get_telegram() {
     awk '/TELEGRAM:/ {print $2}' "$CONFIG_FILE"

@@ -9,7 +9,11 @@ https://github.com/subspace/subspace/releases
 !!chmod +X restart_subspace_farm.sh !!
 
 
-1) UPDATE FUNCTIONS.SH CONFIG FILE TO ABSOLUTE PATHWAY
+1) UPDATE ABSOLUTE PATHWAYS 
+    - FUNCTIONS.SH --> CONFIG_FILE=
+      SOURCE FILE FOR 
+        - farm_alerts & start_farm
+    ...i need to use Javascript ... bash sucks for relative file paths???
 
 
 # 2) UPDATE CONFIG.YAML FOR CORRECT PATHS or updated CLI commands
