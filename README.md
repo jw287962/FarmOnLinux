@@ -8,33 +8,37 @@ https://github.com/subspace/subspace/releases
 ADD CHMOD +X to SH SCRIPTS
 
 
-# 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
+
+## 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES:
 
-NODE: '/home/jason/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"'
+NODE: '`</PATH>`/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"'
 
-FARMER: '/home/jason/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address `<ADDRESS>` path=/mnt/ed1bccd4-5d61-43ea-aef6-4d05bd49fdf9,size=3.93TB'
+FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB'
 
-TELEGRAM: https://api.telegram.org/bot `<TOKEN>` /sendMessage
+"CHAT_ID": `<CHATID of telegram>`,
+
+"AUTOSTART": 0 --> Add 1 for autostart.. 0 will call autoStop to kill all services
 
 
+## START
 -- START ./startSession.sh  --
-# REBOOT START SCRIPT W/ CRONTAB
+
+## START SCRIPT W/ CRONTAB on reboot
+crontab -e (TO EDIT)
+
+@reboot /home/pathway to /startSession.sh
+@reboot /home/pathway to /autoStop.sh 
+
+crontab -l  (TO VIEW FILE)
+
 
 if you need sudo level permission
 sudo crontab -u root -e  (TO EDIT)
 sudo crontab -u root -l (TO VIEW)
 
-
-crontab -e
-
-@reboot /home/pathway to /startSession.sh
-
-
-crontab -l 
-
 # SSH
-attach tmux session by starting attachSession.sh
+attach tmux session by calling attachSession.sh
 
 OPTION 1:
 Read log files with 
@@ -43,12 +47,14 @@ IE: tail -n 5
 
 
 
-# DOWNLOADING TOO SLOW?
+
+# OTHER
+## DOWNLOADING TOO SLOW?
 Add this to your farmer:
 --in-connections 500 --pending-in-connections 500 --out-connections 500 --pending-out-connections 500
 
 
-# One node, multiple farm?
+## One node, multiple farm?
 
 Node:
 
