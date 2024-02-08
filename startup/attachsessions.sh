@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Open first terminal and attach to tmux session
-gnome-terminal -- tmux attach-session -t session_name_1 &
+gnome-terminal -- tmux attach-session -t farm_session &
 
 # Open second terminal and attach to tmux session
-gnome-terminal -- tmux attach-session -t session_name_2 &
+gnome-terminal -- tmux attach-session -t node_session &
 
