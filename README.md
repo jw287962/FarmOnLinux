@@ -11,13 +11,8 @@ https://github.com/subspace/subspace/releases
 
 1) UPDATE FUNCTIONS.SH CONFIG FILE TO ABSOLUTE PATHWAY
 
-START ipbroadcast/sh first
-START restart_subspace_farm.sh
 
-IPBROADCAST STARTS Subspace Node and broadcast computer IP to ssh if needed
-restart_subspace_farm.sh will restart FARM and telegram alerts for FARMING
-
-# UPDATE CONFIG.YAML FOR CORRECT PATHS or updated CLI commands
+# 2) UPDATE CONFIG.YAML FOR CORRECT PATHS or updated CLI commands
 EXAMPLES:
 
 NODE: '/home/jason/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"'
@@ -26,6 +21,13 @@ FARMER: '/home/jason/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2
 
 TELEGRAM: https://api.telegram.org/bot `<TOKEN>` /sendMessage
 
+
+
+START ipbroadcast/sh first
+START restart_subspace_farm.sh
+
+IPBROADCAST STARTS Subspace Node and broadcast computer IP to ssh if needed
+restart_subspace_farm.sh will restart FARM and telegram alerts for FARMING
 # REBOOT START SCRIPT W/ CRONTAB
 
 if you need sudo level permission
