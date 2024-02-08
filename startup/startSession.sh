@@ -15,7 +15,7 @@
 # tmux new-session -d -s telegram_session "../farm_alerts.sh" 
 
 tmux new-session -d -s node_session "node ../startNodeAndIP.js"
-sleep 7
+sleep 10
 tmux new-session -d -s farm_session "node ../start_farm.js" 
 
 #echo $(tmux list-session)
