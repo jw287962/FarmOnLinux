@@ -11,11 +11,14 @@ const axios = require('axios');
 // console.log('NODE:', config.NODE);
 // console.log('FARMER:', config.FARMER);
 // console.log('TELEGRAM:', config.TELEGRAM);
+
+const HOSTNAME = os.hostname()
+
 async function sendTelegramMessage(message) {
     try {
         await axios.post(config.TELEGRAM, {
             chat_id: config.CHAT_ID,
-            text: message,
+            text: `${HOSTNAME}:${message}`,
             parse_mode: 'HTML'
         });
     } catch (error) {
@@ -23,7 +26,6 @@ async function sendTelegramMessage(message) {
     }
 }
 
-const HOSTNAME = os.hostname()
 
 function getIpAddress() {
     const interfaces = os.networkInterfaces();

@@ -15,7 +15,7 @@ main();
 //WORKING 
 
 async function main() {
-    await await config.sleep(1000); 
+    // await  config.sleep(1000); 
     while (true) {
         console.clear();    
         await runFarmer();
@@ -33,16 +33,16 @@ async function runFarmer() {
         let lastMessageSentTime = Date.now();
         config.ensureDirectoryExistence(LOG_FILE)
         childProcess.stdout.on('data', async (data) => {
-            fs.appendFileSync(LOG_FILE, datagit reset path/to/your/logfile.log
-);
+            fs.appendFileSync(LOG_FILE, data);
             console.log(data);
 
             if (Date.now() - lastMessageSentTime >= 5 * 60 * 1000) {
                 // Send message to Telegram
+                lastMessageSentTime = Date.now();
                 await config.sendTelegramMessage(data);
                 
                 // Update the last message sent time
-                lastMessageSentTime = Date.now();
+               
             }
         });
    

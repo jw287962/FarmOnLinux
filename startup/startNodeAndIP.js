@@ -12,7 +12,7 @@ async function main(){
 
     while (true) {
         console.clear();
-        await config.sendTelegramMessage(`IP: ${config.getIpAddress()}\n Host: ${config.HOSTNAME}`)
+        await config.sendTelegramMessage(`IP: ${config.getIpAddress()}`)
 
         await runNode();
         await config.sleep(10000); // 10 seconds delay
@@ -34,10 +34,11 @@ async function runNode() {
             
             if (Date.now() - lastMessageSentTime >= 5 * 60 * 1000) {
                 // Send message to Telegram
+                lastMessageSentTime = Date.now();
                 await config.sendTelegramMessage(data);
                 
                 // Update the last message sent time
-                lastMessageSentTime = Date.now();
+                
             }
         });
        
