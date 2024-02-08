@@ -1,3 +1,8 @@
 config.yaml
 script.log
 config.js
+*.log
+config.json
+node_modules/
+
+

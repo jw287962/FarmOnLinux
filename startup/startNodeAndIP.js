@@ -24,9 +24,9 @@ async function main(){
 async function runNode() {
     try {
         const childProcess = exec(config.NODE);
-        const LOG_FILE = './logs/node.log'; 
+        const LOG_FILE = 'node.log'; 
         let lastMessageSentTime = Date.now();
-
+        config.ensureDirectoryExistence(LOG_FILE)
 
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);

@@ -5,7 +5,8 @@ const { exec } = require('child_process');
 const { send } = require('process');
 
 
-const LOG_FILE = './startup/logs/farmer.log';
+
+const LOG_FILE = 'farmers.log';
 const FARMER = config.FARMER;
 
 
@@ -14,7 +15,7 @@ main();
 //WORKING 
 
 async function main() {
-    
+    await await config.sleep(1000); 
     while (true) {
         console.clear();    
         await runFarmer();
@@ -24,14 +25,16 @@ async function main() {
     }
 }
 
+
 // RUN FARMER AND DOES ALERTS!
 async function runFarmer() {
     try {
         const childProcess = exec(FARMER);
         let lastMessageSentTime = Date.now();
-
+        config.ensureDirectoryExistence(LOG_FILE)
         childProcess.stdout.on('data', async (data) => {
-            fs.appendFileSync(LOG_FILE, data);
+            fs.appendFileSync(LOG_FILE, datagit reset path/to/your/logfile.log
+);
             console.log(data);
 
             if (Date.now() - lastMessageSentTime >= 5 * 60 * 1000) {

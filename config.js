@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const path = require('path');
 const config = require("./config.json");
 const os = require('os');
 
@@ -39,9 +39,18 @@ function getIpAddress() {
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+const ensureDirectoryExistence = (filePath) => {
+    const directory = path.dirname(filePath);
+    if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory, { recursive: true });
+    }
+};
 config.sendTelegramMessage = sendTelegramMessage;
 config.HOSTNAME = HOSTNAME;
 config.getIpAddress = getIpAddress;
 config.sleep = sleep;
+
+config.ensureDirectoryExistence = ensureDirectoryExistence;
 
 module.exports = config;
