@@ -8,7 +8,7 @@ CHAT_ID=6919531958
 
 while true; do
     # LOG TELEGRAM ALERT
-    LOG_FILE="/script.log"
+    LOG_FILE="/home/jason/Documents/FarmOnLinux/startup/script.log"
 
 
     LIMITLINES=4
@@ -17,7 +17,7 @@ while true; do
         clear
         echo "Last $LIMITLINES Message:"
         echo "$OUTPUT"
-        sleep 1
+        sleep 98
     done
 
     # Send the last log message via Telegram
