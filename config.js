@@ -18,7 +18,7 @@ async function sendTelegramMessage(message) {
     try {
         await axios.post(config.TELEGRAM, {
             chat_id: config.CHAT_ID,
-            text: `${HOSTNAME}:${message}`,
+            text: `${HOSTNAME}\n:${message}`,
             parse_mode: 'HTML'
         });
     } catch (error) {
