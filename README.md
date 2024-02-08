@@ -43,4 +43,22 @@ Read log files with
 tail -n `# of lines`
 IE: tail -n 5
 
+# DOWNLOADING TOO SLOW?
+Add this to your farmer:
+--in-connections 500 --pending-in-connections 500 --out-connections 500 --pending-out-connections 500
+
+
+# One node, multiple farm?
+
+Node:
+
+--rpc-methods unsafe \
+--rpc-cors all \
+--rpc-listen-on x.x.x.x:9945
+
+Farmer:
+
+--node-rpc-url ws://x.x.x.x:9945 \
+
+Replacing the x.x.x.x with your node's IP address
 
