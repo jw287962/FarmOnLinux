@@ -9,6 +9,8 @@ https://github.com/subspace/subspace/releases
 !!chmod +X restart_subspace_farm.sh !!
 
 
+1) UPDATE FUNCTIONS.SH CONFIG FILE TO ABSOLUTE PATHWAY
+
 START ipbroadcast/sh first
 START restart_subspace_farm.sh
 

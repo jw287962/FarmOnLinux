@@ -12,8 +12,8 @@ tmux kill-session -t telegram_session 2>/dev/null
 tmux kill-session -t farm_session 2>/dev/null
 
 
-tmux new-session -d -s telegram_session "./farm_alerts.sh" 
-tmux new-session -d -s farm_session "./start_farm.sh" 
+tmux new-session -d -s telegram_session "../farm_alerts.sh" 
+tmux new-session -d -s farm_session "../start_farm.sh" 
 
 #echo $(tmux list-session)
 
