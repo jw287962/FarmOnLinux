@@ -47,7 +47,21 @@ const ensureDirectoryExistence = (filePath) => {
     if (!fs.existsSync(directory)) {
         fs.mkdirSync(directory, { recursive: true });
     }
+    giveReadWritePermission(filePath)
 };
+
+const giveReadWritePermission =(filePath) => {
+    
+    fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK | fs.constants.W_OK, (err) => {
+        try {
+            fs.accessSync(filePath, fs.constants.F_OK | fs.constants.R_OK | fs.constants.W_OK);
+        } catch (err) {
+            // File doesn't exist or doesn't have read/write permissions
+            fs.chmodSync(filePath, '600'); // Set permissions to read/write for owner only
+            console.log(`Changed permissions of ${filePath} to read/write`);
+        }
+    });
+}
 config.sendTelegramMessage = sendTelegramMessage;
 config.HOSTNAME = HOSTNAME;
 config.getIpAddress = getIpAddress;

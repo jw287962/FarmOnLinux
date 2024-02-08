@@ -31,7 +31,9 @@ async function runFarmer() {
     try {
         const childProcess = exec(FARMER);
         let lastMessageSentTime = Date.now();
+        
         config.ensureDirectoryExistence(LOG_FILE)
+
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);

@@ -18,12 +18,7 @@ FARMER: '/home/jason/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2
 TELEGRAM: https://api.telegram.org/bot `<TOKEN>` /sendMessage
 
 
-
-START ipbroadcast/sh first
-START restart_subspace_farm.sh
-
-IPBROADCAST STARTS Subspace Node and broadcast computer IP to ssh if needed
-restart_subspace_farm.sh will restart FARM and telegram alerts for FARMING
+-- START ./startSession.sh  --
 # REBOOT START SCRIPT W/ CRONTAB
 
 if you need sudo level permission
