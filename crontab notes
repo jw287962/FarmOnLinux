@@ -1,0 +1,11 @@
+crontab -e
+
+@reboot /home/jasonminer/Documents/FarmOnLinux/startup/ipbroadcast.sh
+@reboot /home/jasonminer/Documents/FarmOnLinux/restart_subspace_farm.sh
+
+
+crontab -l to see if it is in it
+
+
+
+

@@ -5,18 +5,10 @@ for farming and mining on my linux with telegram notification
 Download updated release from subspace and follow updated CLI commands
 https://github.com/subspace/subspace/releases 
 
-!!chmod +X ./startup/ipbroadcast.sh !!
-!!chmod +X restart_subspace_farm.sh !!
+ADD CHMOD +X to SH SCRIPTS
 
 
-1) UPDATE ABSOLUTE PATHWAYS 
-    - FUNCTIONS.SH --> CONFIG_FILE=
-      SOURCE FILE FOR 
-        - farm_alerts & start_farm
-    ...i need to use Javascript ... bash sucks for relative file paths???
-
-
-# 2) UPDATE CONFIG.YAML FOR CORRECT PATHS or updated CLI commands
+# 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES:
 
 NODE: '/home/jason/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"'
@@ -41,15 +33,20 @@ sudo crontab -u root -l (TO VIEW)
 
 crontab -e
 
-@reboot /home/Downloads/startup/ipbroadcast.sh
-@reboot /home/Downloads/restart_subspace_farm.sh
+@reboot /home/pathway to /startSession.sh
+
 
 crontab -l 
 
 # SSH
+attach tmux session by starting attachSession.sh
+
+OPTION 1:
 Read log files with 
 tail -n `# of lines`
 IE: tail -n 5
+
+
 
 # DOWNLOADING TOO SLOW?
 Add this to your farmer:

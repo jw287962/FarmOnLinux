@@ -1,39 +1,37 @@
-const config = require('./config')
+
+
+const config = require('../config')
 const fs = require('fs');
-
 const { exec } = require('child_process');
-const { send } = require('process');
-
-
-const LOG_FILE = './startup/logs/farmer.log';
-const FARMER = config.FARMER;
 
 
 main();
+async function main(){
 
-//WORKING 
 
-async function main() {
-    
+
     while (true) {
-        console.clear();    
-        await runFarmer();
-        await config.sendTelegramMessage('RESTARTING CLI');
-        console.log('Restarting CLI...');
-        await await config.sleep(9000);  // Sleep for 9 seconds
+        console.clear();
+        await config.sendTelegramMessage(`IP: ${config.getIpAddress()}\n Host: ${config.HOSTNAME}`)
+
+        await runNode();
+        await config.sleep(10000); // 10 seconds delay
     }
+
 }
 
-// RUN FARMER AND DOES ALERTS!
-async function runFarmer() {
+
+async function runNode() {
     try {
-        const childProcess = exec(FARMER);
+        const childProcess = exec(config.NODE);
+        const LOG_FILE = './logs/node.log'; 
         let lastMessageSentTime = Date.now();
+
 
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);
-
+            
             if (Date.now() - lastMessageSentTime >= 5 * 60 * 1000) {
                 // Send message to Telegram
                 await config.sendTelegramMessage(data);
@@ -42,12 +40,12 @@ async function runFarmer() {
                 lastMessageSentTime = Date.now();
             }
         });
-   
+       
 
         childProcess.stderr.on('data', async (data) => {
-
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);
+           
             await config.sendTelegramMessage(data);
         });
 
@@ -61,15 +59,3 @@ async function runFarmer() {
         // config.sendTelegramMessage('Farmer ${error}') 
     }
 }
-
-// async function sendTelegramMessage(message) {
-//     try {
-//         await axios.post(config.TELEGRAM, {
-//             chat_id: CHAT_ID,
-//             text: message,
-//             parse_mode: 'HTML'
-//         });
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
