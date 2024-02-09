@@ -15,6 +15,8 @@ EXAMPLES:
 {
 NODE: '`</PATH>`/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"',
 
+"RUNNODE": "1",
+
 FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB',
 
 "CHAT_ID": `<CHATID of telegram>`,
@@ -25,6 +27,7 @@ FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-202
 }
 
  ### NOTES
+    - RUNNODE set to 1 will run node... else will not run node... for RPC
     - AUTOSTART--> Add 1 for autostart.. 0 will call autoStop to kill all services
     - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY
 
