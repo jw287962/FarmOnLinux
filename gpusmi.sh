@@ -15,5 +15,5 @@
 # RUN ALPH
 
 
-tmux new-session -d -s alph_session "/home/jasonminer/Downloads/rigel-1.14.2-linux/alph.sh"
+tmux new-session -d -s alph_session "/home/jasonminer/Downloads/rigel-1.14.2-linux/alph.sh 2>&1"
 
