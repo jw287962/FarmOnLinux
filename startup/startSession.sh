@@ -1,16 +1,11 @@
 #!/bin/bash
 
-# Set variables
-#FARM=$(grep 'FARMER:' config.yaml | awk -F "'" '{print $2}')
-#LOG_FILE="script.log"
-
-
 
 # Run $FARM in a new tmux session
 
 # tmux kill-session -t telegram_session 2>/dev/null
 ./killSession.sh
-
+echo "tmux"
 
 # tmux new-session -d -s telegram_session "../farm_alerts.sh" 
 
