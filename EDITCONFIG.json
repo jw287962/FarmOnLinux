@@ -1,0 +1,18 @@
+{
+  "NODE": "/home/jason/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path /home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name 'Jason' --rpc-methods unsafe --rpc-cors all --rpc-listen-on xxxxxx " ,
+  
+  "RUNNODE": "1",
+
+  "FARMER": "/home/jason/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address xxxxx path=xxxx,size=xxxxTB --node-rpc-url ws://192.168.1.91:9945",
+
+  "TELEGRAM": "https://api.telegram.org/bot xxxxxxx /sendMessage",
+
+  "CHAT_ID": "xxxxx",
+
+"AUTOSTART": 1,
+
+  "TIMER": "10"
+}
+
+
+
