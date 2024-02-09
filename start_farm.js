@@ -18,9 +18,9 @@ async function main() {
     // await  config.sleep(1000); 
     while (true) {
         console.clear();    
+        console.log('STARTING FARM')
+        await config.sendTelegramMessage('STARTING FARM ');
         await runFarmer();
-        await config.sendTelegramMessage('RESTARTING CLI');
-        console.log('Restarting CLI...');
         await config.sleep(9000);  // Sleep for 9 seconds
     }
 }
