@@ -32,7 +32,7 @@ async function runNode() {
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);
             
-            if (Date.now() - lastMessageSentTime >= config.TIMER  * 60 * 1000) {
+            if (Date.now() - lastMessageSentTime >= (config.TIMER || 10) * 60 * 1000) {
                 // Send message to Telegram
                 lastMessageSentTime = Date.now();
                 await config.sendTelegramMessage(data);
