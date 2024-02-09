@@ -12,6 +12,8 @@ async function main(){
         console.clear();
         await config.sendTelegramMessage(`IP: ${config.getIpAddress()} \n Starting Node`)
         console.log('starting Node');
+
+        await deleteLogFile(LOG_FILE);
         await runNode();
         await config.sleep(10000); // 10 seconds delay
     }
