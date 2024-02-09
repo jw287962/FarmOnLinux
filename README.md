@@ -46,6 +46,8 @@ crontab -l  (TO VIEW FILE)
 if you need sudo level permission
 sudo crontab -u root -e  (TO EDIT)
 sudo crontab -u root -l (TO VIEW)
+ 
+on cpuCorePerf to make cpus all performance on startup??
 
 # SSH
 attach tmux session by calling attachSession.sh
