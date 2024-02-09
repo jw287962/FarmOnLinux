@@ -8,4 +8,5 @@ crontab -l to see if it is in it
 
 
 
+rep CRON /var/log/syslog
 
