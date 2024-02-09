@@ -20,6 +20,9 @@ async function main() {
         console.clear();    
         console.log('STARTING FARM')
         await config.sendTelegramMessage('STARTING FARM ');
+        config.ensureDirectoryExistence(LOG_FILE)
+        await config.deleteLogFile(LOG_FILE);
+        
         await runFarmer();
         await config.sleep(9000);  // Sleep for 9 seconds
     }
@@ -33,7 +36,7 @@ async function runFarmer() {
         let lastMessageSentTime = Date.now();
         let errorCount =0;
 
-        config.ensureDirectoryExistence(LOG_FILE)
+       
 
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);

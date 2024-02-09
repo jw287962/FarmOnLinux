@@ -3,7 +3,7 @@
 const config = require('./config')
 const fs = require('fs');
 const { exec } = require('child_process');
-
+const LOG_FILE = 'node.log'; 
 
 main();
 async function main(){
@@ -12,8 +12,8 @@ async function main(){
         console.clear();
         await config.sendTelegramMessage(`IP: ${config.getIpAddress()} \n Starting Node`)
         console.log('starting Node');
-
-        await deleteLogFile(LOG_FILE);
+        config.ensureDirectoryExistence(LOG_FILE)
+        await config.deleteLogFile(LOG_FILE);
         await runNode();
         await config.sleep(10000); // 10 seconds delay
     }
@@ -24,11 +24,11 @@ async function main(){
 async function runNode() {
     try {
         const childProcess = exec(config.NODE);
-        const LOG_FILE = 'node.log'; 
+       
         let errorCount = 0;
         let lastMessageSentTime = Date.now();
 
-        config.ensureDirectoryExistence(LOG_FILE)
+        // config.ensureDirectoryExistence(LOG_FILE)
 
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);

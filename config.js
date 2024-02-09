@@ -62,11 +62,21 @@ const giveReadWritePermission =(filePath) => {
         }
     });
 }
+
+async function deleteLogFile(logFilePath) {
+    try {
+        await fs.promises.writeFile(logFilePath, ''); // Clear the contents of the log file
+        console.log(`Log file ${logFilePath} cleared successfully.`);
+    } catch (error) {
+        // Handle error if file clearing fails
+        console.error('Error clearing log file:', error);
+    }
+}
 config.sendTelegramMessage = sendTelegramMessage;
 config.HOSTNAME = HOSTNAME;
 config.getIpAddress = getIpAddress;
 config.sleep = sleep;
-
+config.deleteLogFile = deleteLogFile;
 config.ensureDirectoryExistence = ensureDirectoryExistence;
 
 module.exports = config;
