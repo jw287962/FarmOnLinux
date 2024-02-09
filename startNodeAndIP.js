@@ -7,8 +7,8 @@ const LOG_FILE = 'node.log';
 
 main();
 async function main(){
-
-    while (config.RUNNODE == "1") {
+        console.log(config.RUNNODE)
+    while (config.RUNNODE == 1) {
         console.clear();
         await config.sendTelegramMessage(`IP: ${config.getIpAddress()} \n Starting Node`)
         console.log('starting Node');
