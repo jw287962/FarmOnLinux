@@ -29,7 +29,8 @@ FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-202
  ### NOTES
     - RUNNODE set to 1 will run node... else will not run node... for RPC
     - AUTOSTART--> Add 1 for autostart.. 0 will call autoStop to kill all services
-    - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY
+    - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY 
+           
 
 ## START
 -- START ./startSession.sh  --

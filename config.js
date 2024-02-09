@@ -57,7 +57,7 @@ const giveReadWritePermission =(filePath) => {
             fs.accessSync(filePath, fs.constants.F_OK | fs.constants.R_OK | fs.constants.W_OK);
         } catch (err) {
             // File doesn't exist or doesn't have read/write permissions
-            fs.chmodSync(filePath, '600'); // Set permissions to read/write for owner only
+            fs.chmodSync(filePath, '777'); // Set permissions to read/write for everyone
             console.log(`Changed permissions of ${filePath} to read/write`);
         }
     });
