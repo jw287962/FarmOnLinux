@@ -55,7 +55,11 @@ Read log files with
 tail -n `# of lines`
 IE: tail -n 5
 
-
+CREATE RSA KEY FOR SSH
+ssh-keygen -t rsa -b 2048
+ssh-copy-id user@ip
+chmod 700 ~/.ssh  
+chmod 600 ~/.ssh/authorized_keys
 
 
 # OTHER
