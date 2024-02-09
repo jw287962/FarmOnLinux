@@ -21,7 +21,7 @@ async function main() {
         await runFarmer();
         await config.sendTelegramMessage('RESTARTING CLI');
         console.log('Restarting CLI...');
-        await await config.sleep(9000);  // Sleep for 9 seconds
+        await config.sleep(9000);  // Sleep for 9 seconds
     }
 }
 
@@ -31,14 +31,15 @@ async function runFarmer() {
     try {
         const childProcess = exec(FARMER);
         let lastMessageSentTime = Date.now();
-        
+        let errorCount =0;
+
         config.ensureDirectoryExistence(LOG_FILE)
 
         childProcess.stdout.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);
 
-            if (Date.now() - lastMessageSentTime >= 5 * 60 * 1000) {
+            if (Date.now() - lastMessageSentTime >= config.TIMER * 60 * 1000) {
                 // Send message to Telegram
                 lastMessageSentTime = Date.now();
                 await config.sendTelegramMessage(data);
@@ -53,7 +54,13 @@ async function runFarmer() {
 
             fs.appendFileSync(LOG_FILE, data);
             console.log(data);
-            await config.sendTelegramMessage(data);
+            await config.sendTelegramMessage(`ERROR: ${data}`);
+
+            errorCount++;
+            if (errorCount >=3){
+                childProcess.kill()
+                
+            }
         });
 
         await new Promise((resolve) => {

@@ -11,18 +11,27 @@ ADD CHMOD +X to SH SCRIPTS
 
 ## 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES:
+{
+NODE: '`</PATH>`/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"',
 
-NODE: '`</PATH>`/Downloads/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"'
-
-FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB'
+FARMER: '`</PATH>`/Downloads/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB',
 
 "CHAT_ID": `<CHATID of telegram>`,
 
-"AUTOSTART": 0 --> Add 1 for autostart.. 0 will call autoStop to kill all services
+"AUTOSTART": 0,
 
+"TIMER": "10"
+}
+
+ ### NOTES
+    - AUTOSTART--> Add 1 for autostart.. 0 will call autoStop to kill all services
+    - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY
 
 ## START
 -- START ./startSession.sh  --
+
+The program should auto restart Node & Farm irrespetive of each other if the program outputs an error 3 times.
+
 
 ## START SCRIPT W/ CRONTAB on reboot
 crontab -e (TO EDIT)
