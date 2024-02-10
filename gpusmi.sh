@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # for NVIDIA GPU mem
 /usr/bin/nvidia-smi -lmc 810;
 
@@ -15,5 +16,7 @@
 # RUN ALPH
 
 
-tmux new-session -d -s alph_session "/home/jasonminer/Downloads/rigel-1.14.2-linux/alph.sh 2>&1"
+#tmux new-session -d -s alph_session "/home/jasonminer/Downloads/rigel-1.14.2-linux/alph.sh 2>&1"
 
+#Query mem	nvidia-smi --query-gpu=clocks.mem --format=csv,noheader
+#query clock	nvidia-smi --query-gpu=clocks.gr --format=csv,noheader
