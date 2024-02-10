@@ -59,15 +59,15 @@ async function runFarmer() {
             console.log(data);
             await config.sendTelegramMessage(`ERROR: ${data}`);
 
-            errorCount++;
-            if (errorCount >=3){
                 childProcess.kill()
-                
-            }
         });
 
         await new Promise((resolve) => {
-            childProcess.on('exit', () => {
+            childProcess.on('exit', async () => {
+                fs.closeSync(LOG_FILE)
+                await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
+                //    if (code !== 0) {
+                    
                 resolve();
             });
         });

@@ -44,7 +44,6 @@ async function runNode() {
 
         childProcess.stderr.on('data', async (data) => {
             fs.appendFileSync(LOG_FILE, data);
-            console.log(data);
             await config.sendTelegramMessage(`ERROR: ${data}`);
 
             errorCount++;
@@ -54,8 +53,14 @@ async function runNode() {
             }
         });
 
-        await new Promise((resolve) => {
-            childProcess.on('exit', () => {
+        await new Promise( (resolve) => {
+            childProcess.on('exit', async (code,signal) => {
+                fs.closeSync(LOG_FILE)
+                await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
+                //    if (code !== 0) {
+
+                //    }
+                
                 resolve();
             });
         });
