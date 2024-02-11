@@ -32,6 +32,7 @@ async function main() {
 // RUN FARMER AND DOES ALERTS!
 async function runFarmer() {
     try {
+        
         const childProcess = exec(FARMER);
         let lastMessageSentTime = Date.now();
 
