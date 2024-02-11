@@ -4,5 +4,4 @@ config.js
 *.log
 config.json
 node_modules/
-
-
+sshLoginAlert.sh
