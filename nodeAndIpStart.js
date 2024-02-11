@@ -1,17 +1,15 @@
 const config = require('./config');
-const fs = require('fs');
 const { exec } = require('child_process');
-const LOG_FILE = 'node.log'; 
 
 main();
 
 async function main() {
-    console.clear();
-    await config.sendTelegramMessage(`IP: ${config.getIpAddress()} \n Starting Node`);
-    console.log('starting Node');
-    config.ensureDirectoryExistence(LOG_FILE);
-    await config.deleteLogFile(LOG_FILE);
-    await runNode();
+    if (config.RUNNODE == 1) {
+        console.clear();
+        await config.sendTelegramMessage(`IP: ${config.getIpAddress()} \n Starting Node`);
+        console.log('starting Node');
+        await runNode();
+    }
 }
 
 async function runNode() {
@@ -20,7 +18,6 @@ async function runNode() {
         let lastMessageSentTime = Date.now();
 
         childProcess.stdout.on('data', async (data) => {
-            fs.appendFileSync(LOG_FILE, data);
             console.log(data);
 
             if (Date.now() - lastMessageSentTime >= (config.TIMER || 10) * 60 * 1000) {
@@ -30,7 +27,6 @@ async function runNode() {
         });
 
         childProcess.stderr.on('data', async (data) => {
-            fs.appendFileSync(LOG_FILE, data);
             await config.sendTelegramMessage(`ERROR: ${data}`);
             childProcess.kill();
         });
