@@ -33,9 +33,8 @@ FARMER: 'home/jason/.local/bin/subspace-node farm --reward-address `<ADDRESS>` p
     - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY 
            
 # SSH
-attach tmux session by calling attachSession.sh
+OPTION 1:??
 
-OPTION 1:
 Read log files with 
 tail -n `# of lines`
 IE: tail -n 5
@@ -45,6 +44,10 @@ ssh-keygen -t rsa -b 2048
 ssh-copy-id user@ip
 chmod 700 ~/.ssh  
 chmod 600 ~/.ssh/authorized_keys
+
+# to alert telegram
+ForceCommand /home/jason/Documents/FarmOnLinux/sshLoginAlert.sh
+
 
 
 # OTHER
