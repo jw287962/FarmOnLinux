@@ -24,7 +24,7 @@ async function main() {
         await config.deleteLogFile(LOG_FILE);
         
         await runFarmer();
-        await config.sleep(9000);  // Sleep for 9 seconds
+        await config.sleep(2000);  // Sleep for 1 sec
     }
 }
 
@@ -34,7 +34,6 @@ async function runFarmer() {
     try {
         const childProcess = exec(FARMER);
         let lastMessageSentTime = Date.now();
-        let errorCount =0;
 
        
 
@@ -64,7 +63,6 @@ async function runFarmer() {
 
         await new Promise((resolve) => {
             childProcess.on('exit', async () => {
-                fs.closeSync(LOG_FILE)
                 await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
                 //    if (code !== 0) {
                     

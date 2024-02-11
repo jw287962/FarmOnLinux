@@ -46,21 +46,15 @@ async function runNode() {
             fs.appendFileSync(LOG_FILE, data);
             await config.sendTelegramMessage(`ERROR: ${data}`);
 
-            errorCount++;
-            if (errorCount >=3){
                 childProcess.kill()
                 
-            }
         });
 
         await new Promise( (resolve) => {
             childProcess.on('exit', async (code,signal) => {
-                fs.closeSync(LOG_FILE)
                 await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
                 //    if (code !== 0) {
 
-                //    }
-                
                 resolve();
             });
         });
