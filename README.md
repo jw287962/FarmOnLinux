@@ -14,11 +14,11 @@ ADD CHMOD +X to SH SCRIPTS
 EXAMPLES: 
 ### CHANGE NAME OF JASON IN NODE AND FARMER TO YOUR USER
 {
-NODE: '/home/jason/.local/bin/subspace-node run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"',
+NODE: "/home/jason/.local/bin/subspace-node run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name 'Jason' --rpc-methods unsafe --rpc-cors all --rpc-listen-on 0.0.0.0:9945 --prometheus-listen-on 0.0.0.0:1111",
 
 "RUNNODE": "1",
 
-FARMER: 'home/jason/.local/bin/subspace-node farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB',
+FARMER: 'home/jason/.local/bin/subspace-node farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB -node-rpc-url ws://192.168.1.253:9945 --metrics-endpoints 0.0.0.0:2222',
 
 "CHAT_ID": `<CHATID of telegram>`,
 
