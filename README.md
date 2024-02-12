@@ -14,7 +14,7 @@ ADD CHMOD +X to SH SCRIPTS
 EXAMPLES: 
 ### CHANGE NAME OF JASON IN NODE AND FARMER TO YOUR USER
 {
-NODE: '/home/jason/.local/bin/subspace-node run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name "Jason"',
+NODE: '/home/jason/.local/bin/subspace-node run --base-path home/jason/.local/bin/SubspaceNode --chain gemini-3h --farmer --name "Jason"',
 
 "RUNNODE": "1",
 
@@ -40,7 +40,7 @@ tail -n `# of lines`
 IE: tail -n 5
 
 CREATE RSA KEY FOR SSH
-ssh-keygen -t rsa -b 2048
+ ssh-keygen |EITHER ONE| ssh-keygen -t rsa -b 2048 
 ssh-copy-id user@ip
 
 cat id_rsa.pub >> ~/.ssh/authorized_keys
@@ -52,6 +52,8 @@ chmod 600 ~/.ssh/authorized_keys
 nano /etc/ssh/sshd_config
 add:
 ForceCommand /home/jason/Documents/FarmOnLinux/sshLoginAlert.sh
+& PubkeyAuthentication yes | PasswordAuthentication no | LoginGraceTime 120 | PermitRootLogin no | AllowUsers user1 user2
+systemctl restart ssh
 
 
 
