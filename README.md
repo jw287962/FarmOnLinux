@@ -8,7 +8,11 @@ wget 'LINK' to download in CLI
 
 ADD CHMOD +X to SH SCRIPTS
 
-
+# TURN ON FIREWALL FOR METRIC ENDPOINTS AND FOR RPC 
+ - force allow or may cause abrupt issues
+ - sudo ufw allow port#  || port#/tcp
+ - sudo ufw status 
+ - sudo ufw delete #  --> delete # based on status ordered list
 
 ## 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES: 
@@ -63,14 +67,11 @@ systemctl restart ssh
 Add this to your farmer:
 --in-connections 500 --pending-in-connections 500 --out-connections 500 --pending-out-connections 500
 
-
 ## One node, multiple farm?
-
 Node:
-
 --rpc-methods unsafe \
 --rpc-cors all \
---rpc-listen-on x.x.x.x:9945
+--rpc-listen-on x.x.x.x:9945  || USE 0.0.0.0:9945 FOR SOME COMPUTERS
 
 Farmer:
 
@@ -94,10 +95,11 @@ wget -O /home/jason/.local/bin/subspace-farmer https://github.com/subspace/subsp
 https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ 
 get service information
 
-# EDITOR
+# EDITOR for systemd / systemctl service
 EDITOR=nano sudo -e /etc/systemd/system/subspace-node.service
 EDITOR=nano sudo -e /etc/systemd/system/subspace-farmer.service
 
+# SYSTEMD 
 sudo systemctl start subspace-node 
 sudo systemctl stop subspace-node 
 sudo systemctl enable subspace-node 
@@ -113,23 +115,13 @@ sudo journalctl -f -o cat -u subspace-node
 sudo journalctl -f -o cat -u subspace-farmer
 
 ## Count Farmer Rewards Received in the Last Hour:
-
 sudo journalctl -o cat -u subspace-farmer --since="1 hour ago" | grep -i "Successfully signed reward hash" | wc -l
 
 
-# Upgrade
-To upgrade a node and farmer, first, stop running services:
 
- - sudo systemctl stop subspace-{node,farmer}
+# SAMPLE  SYSTEMCTL/SYSTEMD Service FILE:
+sudo nano /etc/systemd/system/my_custom_service.service
 
-After using the commands from the beginning of the manual, download the executable files of the new release. And if you installed under a regular user, you will need to switch to that user beforehand.
-
-Now you can start the services:
-
- - sudo systemctl start subspace-{node,farmer}
-
-
-# SAMPLE 
 [Unit]
 Description=Subspace Node
 Wants=network.target
@@ -149,16 +141,17 @@ LimitNOFILE=100000
 [Install]
 WantedBy=multi-user.target
 
-# SYSTEMD
+# SYSTEMD service to run both with 2 services.
 
-#!/bin/bash
-node /home/jason/Documents/FarmOnLinux/farmStart.js 
+   1. #!/bin/bash
+    node /home/jason/Documents/FarmOnLinux/farmStart.js 
 
-#!/bin/bash
-node /home/jason/Documents/FarmOnLinux/nodeAndIpStart.js
+   2. #!/bin/bash
+    node /home/jason/Documents/FarmOnLinux/nodeAndIpStart.js
 
 
-## START SCHEDULE W/ CRONTAB on reboot | DO NOT USE FOR SUBSPACE
+## START SCHEDULE W/ CRONTAB on reboot | DO NOT USE FOR SUBSPACE  
+- EASIER BUT CRONTAB IS FOR recurring tasks or for set intervals
 crontab -e (TO EDIT)
 crontab -l  (TO VIEW FILE)
 
