@@ -28,7 +28,7 @@ async function runNode() {
 
         childProcess.stderr.on('data', async (data) => {
             await config.sendTelegramMessage(`ERROR: ${data}`);
-            childProcess.kill();
+//            childProcess.kill();
         });
 
         await new Promise((resolve) => {
