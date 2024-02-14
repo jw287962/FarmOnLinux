@@ -6,7 +6,7 @@
 # END VIEW LOGS
 
 # SSD TEMP
-    ## smartmontools | smartctl
+    ## install smartmontools | smartctl
 
     sudo apt-get install smartmontools
 
