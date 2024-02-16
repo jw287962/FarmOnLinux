@@ -31,12 +31,14 @@ async function runNode() {
 //            childProcess.kill();
         });
 
-        await new Promise((resolve) => {
-            childProcess.on('exit', async (code, signal) => {
-                await config.sendTelegramMessage(`SHUTTING DOWN: ${code} Sig:${signal}`); 
-                resolve();
-            });
-        });
+       await new Promise((resolve) => {
+    childProcess.on('exit', async (code, signal) => {
+        const parentPID = process.ppid;
+        await config.sendTelegramMessage(`SHUTTING DOWN: PID ${parentPID} received signal ${signal} (code ${code})`);
+        resolve();
+    });
+});
+
     } catch (error) {
         console.error('Error:', error);
     }
