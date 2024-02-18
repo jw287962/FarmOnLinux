@@ -42,7 +42,7 @@ async function runFarmer() {
 
         await new Promise((resolve) => {
             childProcess.on('exit', async (code) => {
-                await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
+                await config.sendTelegramMessage(`SHUTTING DOWN FARM: ${code}`); 
                 resolve();
             });
         });

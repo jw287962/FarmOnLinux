@@ -18,7 +18,7 @@ async function runNode() {
         let lastMessageSentTime = Date.now();
 
         childProcess.stdout.on('data', async (data) => {
-            console.log(data);
+            // console.log(data);
 
             if (Date.now() - lastMessageSentTime >= (config.TIMER || 10) * 60 * 1000) {
                 lastMessageSentTime = Date.now();
@@ -34,7 +34,7 @@ async function runNode() {
        await new Promise((resolve) => {
     childProcess.on('exit', async (code, signal) => {
         const parentPID = process.ppid;
-        await config.sendTelegramMessage(`SHUTTING DOWN: PID ${parentPID} received signal ${signal} (code ${code})`);
+        await config.sendTelegramMessage(`SHUTTING DOWN NODE: PID ${parentPID} received signal ${signal} (code ${code})`);
         resolve();
     });
 });

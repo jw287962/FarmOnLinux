@@ -52,7 +52,7 @@ async function runNode() {
 
         await new Promise( (resolve) => {
             childProcess.on('exit', async (code,signal) => {
-                await config.sendTelegramMessage(`SHUTTING DOWN: ${code}`); 
+                await config.sendTelegramMessage(`SHUTTING DOWN NODE: ${code}`); 
                 //    if (code !== 0) {
 
                 resolve();
