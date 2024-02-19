@@ -14,6 +14,10 @@ ADD CHMOD +X to SH SCRIPTS
  - sudo ufw status 
  - sudo ufw delete #  --> delete # based on status ordered list
 
+
+# FORMAT DRIVES:
+sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev
+
 ## 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES: 
 ### CHANGE NAME OF JASON IN NODE AND FARMER TO YOUR USER
