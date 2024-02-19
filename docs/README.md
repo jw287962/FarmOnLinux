@@ -96,7 +96,7 @@ wget -O /home/jason/.local/bin/subspace-node https://github.com/subspace/subspac
 ## FARMER: 
 wget -O /home/jason/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-15/subspace-farmer-ubuntu-x86\_64-v2-gemini-3h-2024-feb-15
 
-https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ 
+[Subspace Docs (check Ubuntu for Recommendations) ](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 get service information
 
 # EDITOR for systemd / systemctl service
@@ -124,6 +124,7 @@ sudo journalctl -o cat -u subspace-farmer --since="1 hour ago" | grep -i "Succes
 
 
 # SAMPLE  SYSTEMCTL/SYSTEMD Service FILE:
+[Subspace Docs](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 sudo nano /etc/systemd/system/my_custom_service.service
 
 [Unit]
