@@ -3,31 +3,30 @@ for farming and mining on my linux with telegram notification
 
 
 Download updated release from subspace and follow updated CLI commands
-https://github.com/subspace/subspace/releases 
+https://github.com/subspace/subspace/releases  -- Use UpdateNodeFarm command
 wget 'LINK' to download in CLI
 
 ADD CHMOD +X to SH SCRIPTS
 
-# TURN ON FIREWALL FOR METRIC ENDPOINTS AND FOR RPC 
+## FORMAT DRIVES:
+  >sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev
+
+## TURN ON FIREWALL FOR METRIC ENDPOINTS AND FOR RPC 
  - force allow or may cause abrupt issues
  - sudo ufw allow port#  || port#/tcp
  - sudo ufw status 
  - sudo ufw delete #  --> delete # based on status ordered list
-
-
-# FORMAT DRIVES:
-sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev
 
 ## 2) UPDATE config.json FOR CORRECT PATHS or updated CLI commands
 EXAMPLES: 
 ### CHANGE NAME OF JASON IN NODE AND FARMER TO YOUR USER
 {
 
-NODE: "/home/jason/.local/bin/subspace-node run --base-path home/jason/Downloads/SubspaceNode --chain gemini-3h --farmer --name 'Jason' --rpc-methods unsafe --rpc-cors all --rpc-listen-on 0.0.0.0:9945 --prometheus-listen-on 0.0.0.0:1111",
+NODE: "/home/`<NAME>`/.local/bin/subspace-node run --base-path home/`<NAME>`/.local/share/SubspaceNode --chain gemini-3h --farmer --name '`<NAME>`' --rpc-methods unsafe --rpc-cors all --rpc-listen-on 0.0.0.0:9945 --prometheus-listen-on 0.0.0.0:1111",
 
 "RUNNODE": "1",
 
-FARMER: 'home/jason/.local/bin/subspace-node farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB -node-rpc-url ws://192.168.1.253:9945 --metrics-endpoints 0.0.0.0:2222',
+FARMER: 'home/`<NAME>`/.local/bin/subspace-farmer farm --reward-address `<ADDRESS>` path=`</PATH>`,size=3.93TB -node-rpc-url ws://192.168.1.253:9945 --metrics-endpoints 0.0.0.0:2222',
 
 "CHAT_ID": `<CHATID of telegram>`,
 
@@ -38,7 +37,7 @@ FARMER: 'home/jason/.local/bin/subspace-node farm --reward-address `<ADDRESS>` p
 
  ### NOTES
     - RUNNODE set to 1 will run node... else will not run node... for RPC
-    - AUTOSTART--> Add 1 for autostart.. 0 will call autoStop to kill all services
+    - AUTOSTART--> Add 1 for autostart.. 0 will call autoStop to kill all services... relies on SystemD though. so set up systemd first.
     - TIMER: Units in Minutes... TELEGRAM NOTIFICATION DELAY 
            
 # SSH
