@@ -43,6 +43,8 @@ get service information
     udisksctl eject -b /dev/sdb
     udisksctl lock -b /dev/sdb1
 
-# CPU TEMPS
-Nothing works lul on 7950x
-
+# CPU TEMPS - corefreq-cli
+apply command to where you extract tar file after make and install properly 
+sudo insmod ./corefreqk.ko  
+sudo ./corefreqd &
+./corefreq-cli
