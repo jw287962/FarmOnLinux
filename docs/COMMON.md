@@ -1,5 +1,6 @@
 ## 1) Download Latest Release & Guidelines
 ##### - Subspace Releases [CLICK LINK](https://github.com/subspace/subspace/releases):
+sudo apt install jq before running command
 - Use UpdateNodeFarm command || wget 'Download URL' to download in CLI 
      
 ##### -  Executable 'chmod +x /path/to/file': 
