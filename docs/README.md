@@ -169,4 +169,5 @@ WantedBy=multi-user.target
 ##### cpuCorePerf
 - to make cpus all performance on startup
 
-
+#### Temps
+ - S-tui
