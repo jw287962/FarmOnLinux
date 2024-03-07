@@ -3,7 +3,7 @@
 
 # for NVIDIA GPU mem
 /usr/bin/nvidia-smi -lmc 810;
-
+#PERSISTENCE: nvidia-smi -pm 1 for persistence mode
 
 # for 4090
 #/usr/bin/nvidia-smi --ID=0 -lgc 2370;
