@@ -18,7 +18,11 @@ get service information
 ## 2) VIEW LOGS from systemd/ systemctl start services
     sudo journalctl -f -o cat -u subspace-node
     sudo journalctl -f -o cat -u subspace-farmer
-
+#### Read log files with 
+	tail -n +50 node.log
+	tail -n +50 -f node.log
+	- -f for update
+	- IE: 50 represents # of lines to show 
 
 ## 3) SSD TEMP
 - #### **LIST ALL STORAGE DEVICES**

@@ -39,7 +39,7 @@ get service information
 ---
 ### UPDATE config.json
  - ### USE CORRECT PATHWAY AND NAMES
- ```
+```
 { 
 NODE: "/home/`<NAME>`/.local/bin/subspace-node run --base-path home/`<NAME>`/.local/share/SubspaceNode --chain gemini-3h --farmer --name '`<NAME>`' --rpc-methods unsafe --rpc-cors all --rpc-listen-on 0.0.0.0:9945 --prometheus-listen-on 0.0.0.0:1111",
 
@@ -52,12 +52,13 @@ FARMER: 'home/`<NAME>`/.local/bin/subspace-farmer farm --reward-address `<ADDRES
 "TIMER": "10"
 }
 ```
+
    > RUNNODE: 1 or 0
         -  set to 1 will run node incase you use RPC and do not want to run node (Or disable SYSTEMD but this will prevent it from running logic side as well)
    TIMER (MINUTES): 
     - TELEGRAM NOTIFICATION DELAY in MINUTES
            
-           
+        	   
 # SSH [Subspace Security Doc](https://docs.subspace.network/docs/learn/security)
 #### CREATE RSA KEY FOR SSH
  - ssh-keygen |EITHER ONE| ssh-keygen -t rsa -b 2048 
@@ -67,7 +68,7 @@ FARMER: 'home/`<NAME>`/.local/bin/subspace-farmer farm --reward-address `<ADDRES
 - chmod 700 ~/.ssh  
 - chmod 600 ~/.ssh/authorized_keys
 #### Read log files with 
-- tail -n # of lines file
+- tail -n +# of lines file
 - IE: tail -n 5 /file
 
 #### SSH CONFIG SETTINGS

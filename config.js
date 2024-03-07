@@ -22,7 +22,7 @@ async function sendTelegramMessage(message) {
             parse_mode: 'HTML'
         });
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error: Axios Request' + error);
     }
 }
 
