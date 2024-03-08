@@ -52,3 +52,8 @@ apply command to where you extract tar file after make and install properly
 sudo insmod ./corefreqk.ko  
 sudo ./corefreqd &
 ./corefreq-cli
+
+
+# nano ~/.bash_profile
+ - for auto script when some1 ssh 
+ - Add "home/jason/.local/bin/sshLoginAlert.sh" or something
