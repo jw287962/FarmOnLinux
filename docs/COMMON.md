@@ -21,6 +21,7 @@ get service information
 #### Read log files with 
 	tail -n +50 node.log
 	tail -n +50 -f node.log
+	tail -f node.log
 	- -f for update
 	- IE: 50 represents # of lines to show 
 
