@@ -22,6 +22,8 @@ sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnt
     sudo journalctl -f -o cat -u subspace-node
     sudo journalctl -f -o cat -u subspace-farmer
     
+     sudo journalctl -u subspace-farmer
+    
     journalctl -u service-name.service -b
 #### Read log files with 
 	tail -n +50 node.log

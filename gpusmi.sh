@@ -2,6 +2,7 @@
 
 
 # for NVIDIA GPU mem
+/usr/bin/nvidia-smi -pm 1
 /usr/bin/nvidia-smi -lmc 810;
 #PERSISTENCE: nvidia-smi -pm 1 for persistence mode
 
