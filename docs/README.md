@@ -112,8 +112,8 @@ mkdir -p /root/.local/share
 ```
 
 #### EDITOR for systemd / systemctl service 
-- EDITOR=nano sudo -e /etc/systemd/system/subspace-node.service
-- EDITOR=nano sudo -e /etc/systemd/system/subspace-farmer.service
+- EDITOR=sudo nano -e /etc/systemd/system/subspace-node.service
+- EDITOR=sudo nano /etc/systemd/system/subspace-farmer.service
 ###### AFTER EDIT TO SERVICE FILES:
 - systemctl daemon-reload
 
@@ -172,4 +172,4 @@ WantedBy=multi-user.target
 - to make cpus all performance on startup
 
 #### Temps
- - S-tui
+ - s-tui

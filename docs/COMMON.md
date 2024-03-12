@@ -16,8 +16,13 @@ sudo apt install jq before running command
 [Subspace Docs (check Ubuntu for Recommendations) ](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 get service information
 ## 2) VIEW LOGS from systemd/ systemctl start services
+sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)"
+	- view logs since script start.
+
     sudo journalctl -f -o cat -u subspace-node
     sudo journalctl -f -o cat -u subspace-farmer
+    
+    journalctl -u service-name.service -b
 #### Read log files with 
 	tail -n +50 node.log
 	tail -n +50 -f node.log
