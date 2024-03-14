@@ -16,29 +16,37 @@ sudo apt install jq before running command
 [Subspace Docs (check Ubuntu for Recommendations) ](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 get service information
 ## 2) VIEW LOGS from systemd/ systemctl start services
-sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)"
+`sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)"`
 	- view logs since script start.
 
-    sudo journalctl -f -o cat -u subspace-node
-    sudo journalctl -f -o cat -u subspace-farmer
+    `sudo journalctl -f -o cat -u subspace-node`
+    `sudo journalctl -f -o cat -u subspace-farmer`
     
-     sudo journalctl -u subspace-farmer
+     `sudo journalctl -u subspace-farmer`
     
-    journalctl -u service-name.service -b
+    `journalctl -u service-name.service -b`
+       
+#### EDITOR for systemd / systemctl service 
+- EDITOR= `sudo nano -e /etc/systemd/system/subspace-node.service`
+- EDITOR= ` sudo nano /etc/systemd/system/subspace-farmer.service `
+
+	- `systemctl daemon-reload`
 #### Read log files with 
-	tail -n +50 node.log
-	tail -n +50 -f node.log
-	tail -f node.log
+	`tail -n +50 node.log`
+	`tail -n +50 -f node.log`
+	`tail -f node.log`
 	- -f for update
 	- IE: 50 represents # of lines to show 
 
 ## 3) SSD TEMP
 - #### **LIST ALL STORAGE DEVICES**
-   -  udisksctl status
+   -  `udisksctl status`
         - WILL RETURN /DEV/SDD AND ETC.
 - #### CHECK SPACE
-    - df 
-    - df -h /dev/sdx
+    - `df `
+    - `df -h /dev/sdx`
+    
+    - `sudo fdisk -l`
      
 - #### smartmontools | smartctl
     - Install
