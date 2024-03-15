@@ -3,7 +3,7 @@
 sudo apt install jq before running command
 - Use UpdateNodeFarm command || wget 'Download URL' to download in CLI 
      
-##### -  Executable 'chmod +x /path/to/file': 
+
 ##### WGET
 
 **- Node**
@@ -12,25 +12,28 @@ sudo apt install jq before running command
 **- FARMER**
 - wget -O /home/jason/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-15/subspace-farmer-ubuntu-x86\_64-v2-gemini-3h-2024-feb-15
 
+##CHMOD -  Executable 'chmod +x /path/to/file': 
 ---
 [Subspace Docs (check Ubuntu for Recommendations) ](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 get service information
 ## 2) VIEW LOGS from systemd/ systemctl start services
-`sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)"`
+```sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)" ```
 	- view logs since script start.
 
-    `sudo journalctl -f -o cat -u subspace-node`
-    `sudo journalctl -f -o cat -u subspace-farmer`
+    ```sudo journalctl -f -o cat -u subspace-node```
+    ```sudo journalctl -f -o cat -u subspace-farmer```
     
-     `sudo journalctl -u subspace-farmer`
+     ```sudo journalctl -u subspace-farmer```
     
-    `journalctl -u service-name.service -b`
+    ```journalctl -u service-name.service -b```
        
 #### EDITOR for systemd / systemctl service 
-- EDITOR= `sudo nano -e /etc/systemd/system/subspace-node.service`
-- EDITOR= ` sudo nano /etc/systemd/system/subspace-farmer.service `
+- EDITOR= 
+     ```sudo nano -e /etc/systemd/system/subspace-node.service```
+- EDITOR= 
+     ``` sudo nano /etc/systemd/system/subspace-farmer.service ```
 
-	- `systemctl daemon-reload`
+	- ```systemctl daemon-reload```
 #### Read log files with 
 	`tail -n +50 node.log`
 	`tail -n +50 -f node.log`
