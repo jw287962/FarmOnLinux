@@ -28,6 +28,11 @@ get service information
   - tune2fs -m 0 /dev/sdx  
 
 - Don't forget to take ownership of new drives, and do auto mount at startup
+    - sudo mount /mnt/drive
+    - sudo umount /mnt/drive
+
+    - sudo chown or use disks app
+    - update command line
 ### FIREWALL FOR RPC AND METRICS [PORTS, NETWORK, FIREWALL](https://docs.subspace.network/docs/farming-&-staking/farming/additional-guides/networking)
 - sudo ufw allow 30333,30433 comment 'Subspace Node' for the node and sudo ufw allow 30533 comment 'Subspace Farmer'
  - sudo ufw allow port#  || port#/tcp
