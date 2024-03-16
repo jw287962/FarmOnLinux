@@ -18,7 +18,8 @@ sudo apt install jq before running command
 get service information
 ## 2) VIEW LOGS from systemd/ systemctl start services
 ```sudo journalctl -o cat -u subspace-farmer --since "$(systemctl show -p ActiveEnterTimestamp --value subspace-farmer)" ```
-	- view logs since script start.
+	
+- view logs since script start.
 
     ```sudo journalctl -f -o cat -u subspace-node```
     ```sudo journalctl -f -o cat -u subspace-farmer```
@@ -69,9 +70,10 @@ get service information
 # CPU TEMPS - corefreq-cli
 apply command to where you extract tar file after make and install properly 
 sudo insmod ./corefreqk.ko  
+``` 
 sudo ./corefreqd &
 ./corefreq-cli
-
+```
 
 # nano ~/.bash_profile
  - for auto script when some1 ssh 
