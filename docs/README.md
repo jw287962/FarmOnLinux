@@ -130,8 +130,8 @@ mkdir -p /root/.local/share
 - sudo systemctl status subspace-node 
 
 #### View LOGS:
-sudo journalctl -f -o cat -u subspace-node
-sudo journalctl -f -o cat -u subspace-farmer
+ journalctl -f -o cat -u subspace-node
+ journalctl -f -o cat -u subspace-farmer
 
 #### SAMPLE  SYSTEMCTL/SYSTEMD Service FILE:
 [Subspace Docs](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
