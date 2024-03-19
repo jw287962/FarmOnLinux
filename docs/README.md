@@ -77,11 +77,18 @@ FARMER: 'home/`<NAME>`/.local/bin/subspace-farmer farm --reward-address `<ADDRES
 - IE: tail -n 5 /file
 
 #### SSH CONFIG SETTINGS
-###### Edit file with: 
+###### Edit file with:
+
 - nano /etc/ssh/sshd_config
 ###### APPLY CHANGES:
+
+# SSH ALERT: (nano ~/.bash_profile)
+ - for auto script when some1 ssh 
+ - Add "home/jason/.local/bin/sshLoginAlert.sh" or somethin
+
+[deprecated]
  - ForceCommand /home/jason/Documents/FarmOnLinux/sshLoginAlert.sh
--- This will send alerts when someone SSH into SERVER
+ - This will send alerts when someone SSH into SERVER
 
 APPLY CHANGES TO FILE
 - PubkeyAuthentication yes 
@@ -157,8 +164,8 @@ LimitNOFILE=100000
 WantedBy=multi-user.target
 ```
 ##### SYSTEMD service to run both with 2 services. 
-
-   1. #!/bin/bash
+		- Just use Port metrics and read logs from journalctl commands if you want to make a script
+   1. #!/bin/bash [deprecated] 
     node /home/jason/Documents/FarmOnLinux/farmStart.js 
 
    2. #!/bin/bash  [deprecated] - use subspace_monitor to get node status

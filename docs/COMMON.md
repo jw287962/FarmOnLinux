@@ -75,6 +75,6 @@ sudo ./corefreqd &
 ./corefreq-cli
 ```
 
-# nano ~/.bash_profile
+# SSH ALERT: (nano ~/.bash_profile)
  - for auto script when some1 ssh 
  - Add "home/jason/.local/bin/sshLoginAlert.sh" or something
