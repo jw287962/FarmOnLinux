@@ -173,7 +173,7 @@ WantedBy=multi-user.target
 
 ##### add to crontab for alert?
 @reboot tmux new-session -d -s journal 'node ~/Documents/FarmOnLinux/journalctlRead.js'
-
+- tmux a  || tmux attach-session journal
 
 #### START SCHEDULE W/ CRONTAB on reboot | DO NOT USE FOR SUBSPACE  
 - EASIER BUT CRONTAB IS FOR recurring tasks or for set intervals
