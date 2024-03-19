@@ -171,6 +171,9 @@ WantedBy=multi-user.target
    2. #!/bin/bash  [deprecated] - use subspace_monitor to get node status
     node /home/jason/Documents/FarmOnLinux/nodeAndIpStart.js
 
+##### add to crontab for alert?
+@reboot tmux new-session -d -s journal 'node ~/Documents/FarmOnLinux/journalctlRead.js'
+
 
 #### START SCHEDULE W/ CRONTAB on reboot | DO NOT USE FOR SUBSPACE  
 - EASIER BUT CRONTAB IS FOR recurring tasks or for set intervals
