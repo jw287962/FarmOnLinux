@@ -23,9 +23,10 @@ get service information
 
     ``` journalctl -f -o cat -u subspace-node```
     ``` journalctl -f -o cat -u subspace-farmer```
-    
-     ``` journalctl -u subspace-farmer```
-    
+	- For most recent logs
+	
+    ``` journalctl -u subspace-farmer```
+   
     ```journalctl -u service-name.service -b```
        
 #### EDITOR for systemd / systemctl service 

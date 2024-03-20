@@ -11,7 +11,9 @@
 
 "AUTOSTART": 1,
 
-  "TIMER": "10"
+  "TIMER": "10",
+
+  "JOURNALCTL": "journalctl -f -o cat -u subspace-farmer"  
 }
 
 
