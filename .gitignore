@@ -5,3 +5,5 @@ config.js
 config.json
 node_modules/
 sshLoginAlert.sh
+
+*.swp
