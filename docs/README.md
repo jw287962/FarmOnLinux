@@ -155,11 +155,12 @@ After=network.target
 [Service]
 User=jason
 Group=jason
-ExecStartPre=/home/jason/.local/bin/cleanup_logs.sh
+
 ExecStart=/home/jason/.local/bin/subspace-node run --base-path /home/jason/.local/share/SubspaceNode --cha>
 
+ExecStopPost=/home/jason/.local/bin/cleanup_logs.sh
 StandardOutput=append:/home/jason/Documents/FarmOnLinux/node.log
-StandardError=append:/home/jason/Documents/FarmOnLinux/nodeerr.log
+StandardError=append:/home/jason/Documents/FarmOnLinux/nodeError.log
 KillSignal=SIGINT
 Restart=always
 RestartSec=10
