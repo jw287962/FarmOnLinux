@@ -143,6 +143,9 @@ mkdir -p /root/.local/share
 #### SAMPLE  SYSTEMCTL/SYSTEMD Service FILE:
 [Subspace Docs](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install/ )
 sudo nano /etc/systemd/system/my_custom_service.service
+
+- cleanup_logs small bash script to rename and delete logs after 3 days
+	- should move it to /home/user/.local/bin/cleanup_logs.sh
 ```
 [Unit]
 Description=Subspace Node
@@ -152,8 +155,11 @@ After=network.target
 [Service]
 User=jason
 Group=jason
-ExecStart=/home/jason/.local/bin/node.sh
+ExecStartPre=/home/jason/.local/bin/cleanup_logs.sh
+ExecStart=/home/jason/.local/bin/subspace-node run --base-path /home/jason/.local/share/SubspaceNode --cha>
 
+StandardOutput=append:/home/jason/Documents/FarmOnLinux/node.log
+StandardError=append:/home/jason/Documents/FarmOnLinux/nodeerr.log
 KillSignal=SIGINT
 Restart=always
 RestartSec=10
@@ -162,6 +168,10 @@ LimitNOFILE=100000
 
 [Install]
 WantedBy=multi-user.target
+
+
+
+
 ```
 ##### SYSTEMD service to run both with 2 services. 
 		- Just use Port metrics and read logs from journalctl commands if you want to make a script
