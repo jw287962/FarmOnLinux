@@ -25,7 +25,11 @@ get service information
 - ##### New drives
   - sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev 
 - ##### Farming drives
-  - tune2fs -m 0 /dev/sdx  
+  - tune2fs -m 0 /dev/sdx 
+  
+  
+  - lsblk to list new drive names /dev/ 
+  - sudo blkid to get UUID --> add to fstab
 
 - Don't forget to take ownership of new drives, and do auto mount at startup
     - sudo mount /mnt/drive
@@ -65,9 +69,10 @@ FARMER: 'home/`<NAME>`/.local/bin/subspace-farmer farm --reward-address `<ADDRES
            
         	   
 # SSH [Subspace Security Doc](https://docs.subspace.network/docs/learn/security)
-#### CREATE RSA KEY FOR SSH
+#### CREATE RSA KEY FOR SSH LINUX
  - ssh-keygen |EITHER ONE| ssh-keygen -t rsa -b 2048 
- - ssh-copy-id user@ip //never works for me... idk why I have to manually move it over
+ 	don't overwrite!
+ - ssh-copy-id -i /home/user/.ssh/id_.pub -p 00 user@ip 
 #### Move Pub File and Apply permission to SERVER PC
  - cat id_rsa.pub >> ~/.ssh/authorized_keys
 - chmod 700 ~/.ssh  
@@ -174,6 +179,10 @@ WantedBy=multi-user.target
 
 
 ```
+
+#RSYNC
+rsync -av --progress /mnt/Sub5/* /mnt/Sub9/
+
 ##### SYSTEMD service to run both with 2 services. 
 		- Just use Port metrics and read logs from journalctl commands if you want to make a script
    1. #!/bin/bash [deprecated] 
