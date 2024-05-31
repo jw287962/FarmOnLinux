@@ -183,6 +183,8 @@ WantedBy=multi-user.target
 #RSYNC
 rsync -av --progress /mnt/Sub5/* /mnt/Sub9/
 
+rsync (with -aWP --sparse options) 
+
 ##### SYSTEMD service to run both with 2 services. 
 		- Just use Port metrics and read logs from journalctl commands if you want to make a script
    1. #!/bin/bash [deprecated] 
