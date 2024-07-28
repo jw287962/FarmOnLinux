@@ -1,7 +1,7 @@
 #!/bin/bash
 # You can edit the $Name == to a different version possibly. although idk if bash is on other OS by default.
 # Fetch the latest release data
-contents=$(curl -s https://api.github.com/repos/subspace/subspace/releases/latest)
+contents=$(curl -s https://api.github.com/repos/autonomys/subspace/releases/latest)
 
 # Extract asset information
 assets=$(echo "$contents" | jq -r '.assets[] | "\(.name) \(.browser_download_url)"')
