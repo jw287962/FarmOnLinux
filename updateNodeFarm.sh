@@ -13,7 +13,7 @@ while read -r name download_url; do
 	
     echo "-----"
     # DOWNLOAD NODE
-     if [[ $name == *"subspace-node-ubuntu-x86_64-skylake-gemini-3h"* ]]; then
+     if [[ $name == *"subspace-node-ubuntu-x86_64-skylake-mainnet"* ]]; then
 	node_path="$HOME.local/bin/subspace-node"
         wget -O $node_path $download_url
         echo "-------"
@@ -24,7 +24,7 @@ while read -r name download_url; do
        echo "skip"
     fi
       # DOWNLOAD FARMER
-    if [[ $name == *"subspace-farmer-ubuntu-x86_64-skylake-gemini-3h"* ]]; then
+    if [[ $name == *"subspace-farmer-ubuntu-x86_64-skylake-mainnet"* ]]; then
     	farmer_path="$HOME.local/bin/subspace-farmer"
         wget -O $farmer_path $download_url
 	echo "-------"	
